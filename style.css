@@ -1,0 +1,249 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --main-theme-color: #31B447;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 44px;
+    font-weight: 900;
+    color: #333333;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 900;
+    color: #333333;
+}
+
+.header {
+    max-width: 100%;
+    padding: 22px;
+    box-shadow: 0px 4px 14px 0px #00000040;
+}
+
+.main {
+    max-width: 100%;
+    padding: 40px 20px 20px;
+}
+
+.section__title {
+    padding: 115px 0 79px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 15px;
+}
+
+.grid__item {
+    align-self: stretch;
+}
+
+.product {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 16px 0px #00000026;
+}
+
+.product__desc {
+    width: 100%;
+    padding: 47px 20px 24px 57px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-links {
+    margin: 20px 0;
+    padding: 34px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.product-links__value {
+    position: relative;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--main-theme-color);
+    text-decoration: none;
+}
+
+.product-links__value:last-child {
+    margin-bottom: 0;
+}
+
+.product-links__value:hover {
+    color: #278E38;
+    transition: .1s linear;
+}
+
+.product-links__value:after {
+    content: "";
+    position: absolute;
+    margin-top: 3px;
+    width: 0;
+    height: 1px;
+    display: block;
+    opacity: 0;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main-theme-color);
+}
+
+.product-links__value:hover::after {
+    width: 100%;
+    opacity: 1;
+    transition: .2s ease-in;
+}
+
+.product-buttons {
+    display: flex;
+    gap: 15px;
+    /*row-gap: 15px;*/
+}
+
+.product-buttons__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 23px;
+    border-radius: 8px;
+    background-color: var(--main-theme-color);
+    color: #ffffff;
+    border: 2px solid var(--main-theme-color);
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.product-buttons__btn i:last-child {
+    margin-left: 18px;
+}
+
+.product-buttons__btn:hover {
+    background-color: #ffffff;
+    color: var(--main-theme-color);
+    transition: .2s linear;
+}
+
+.product__img {
+    max-width: 40%;
+    height: auto;
+    flex-grow: 1;
+}
+
+.section__title ~ .grid .product-links {
+    border-bottom:  none;
+}
+
+
+
+/*MEDIA*/
+
+
+
+
+@media (max-width: 1280px) and (min-width: 1025px) {
+    .product {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product__desc {
+        width: 100%;
+        padding: 20px 0;
+        align-items: center;
+    }
+
+    .product-links {
+        width: 100%;
+        align-items: center;
+    }
+
+    .product-buttons {
+        width: 100%;
+        justify-content: space-evenly;
+        gap: 0;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px)  {
+    .product {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product__desc {
+        width: 100%;
+        padding: 20px 0;
+        align-items: center;
+    }
+
+
+    .product-links {
+        width: 100%;
+        align-items: center;
+    }
+
+    .product-buttons {
+        width: 100%;
+        justify-content: space-evenly;
+        gap: 0;
+    }
+}
+
+@media (max-width: 480px)  {
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    .grid {
+        row-gap: 25px;
+    }
+
+    .section__title {
+        text-align: center;
+        padding: 75px 0 50px;
+    }
+
+    .product-links__value {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .product-buttons__btn {
+        font-size: 22px;
+    }
+
+    .product__img {
+        max-width: 100%;
+        order: -1;
+    }
+}
